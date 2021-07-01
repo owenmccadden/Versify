@@ -1,1 +1,1 @@
-# Reddit_TLDR_Generator
+# Lyric Generation
