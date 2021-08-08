@@ -1,0 +1,307 @@
+* *:before, *:after{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: monospace;
+    font-size: 1.5em;
+    padding: 0;
+    width: 100%;
+    background-color: #fafafa;
+}
+
+#top {
+    width: 40%;
+    margin: auto;
+}
+
+#head h1, h2 {
+    display: inline;
+}
+
+#head h2 {
+    font-size: 1em;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+}
+
+#bullets {
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+ul {
+    list-style-type: circle;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 0.75em;
+}
+li {
+    margin: 1%;
+    padding: 0;
+}
+
+#form {
+    width: 80%;
+    margin: auto;
+}
+
+input {
+    padding:1%;
+    border-radius:15px;
+    border: 2px solid #eee;
+    box-shadow:4px 4px 10px rgba(0,0,0,0.1);
+    transition: .3s #eee;
+}
+
+.button {
+    position: relative;
+    display:inline-block;
+    padding:0.35em 1.2em;
+    margin:0 0.3em 0.3em 0;
+    border:none;
+    background-color: #2196F3;
+    box-shadow:4px 4px 10px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.9em;
+}
+
+.button:active {
+    background: #2196F3;
+}
+
+.button__text {
+    color: #ffffff;
+    transition: all 0.2s;
+}
+
+.button--loading::after {
+    content: "";
+    color: #FFFFFF;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 4px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
+}
+
+.button--loading .button__text {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+@keyframes button-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+.button--loading::after {
+    content: "";
+    color: #007a63;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 4px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
+}
+
+.button--loading .button__text {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+@keyframes button-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+.lyrics {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: grid;
+    grid-template-areas: "title lyrics"
+                         "image lyrics"
+                         "image lyrics"
+    ;
+    grid-template-columns: 40% auto;
+    background-color: #ececec;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+    border: 2px solid #eee;
+}
+
+.lyrics h3{
+    font-size: 1.25em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    grid-area: title;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lyrics .image {
+    grid-area: image;
+    margin: auto;
+    width: 60%;
+}
+
+.lyrics img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 2px solid #000;
+}
+
+.lyrics p {
+    margin-top: 0;
+    grid-area: lyrics;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+@media (max-width: 1600px) {
+
+    #top {
+        width: 50%;
+    }
+    
+}
+
+
+@media (max-width: 1440px) {
+
+    #top {
+        width: 60%;
+    }
+
+}
+
+@media (max-width: 1200px) {
+	
+    #top {
+        width: 75%;
+    }
+	
+}
+@media (max-width: 992px) {	
+	
+    #top {
+        width: 85%;
+        font-size: 0.8em;
+    }
+
+    #head h1 {
+        font-size: 5em;
+        display: block;
+        text-align: center;
+    }
+
+    #head h2 {
+        font-size: 0.65em;
+        display: block;
+        text-align: center;
+    }
+
+    #form {
+        width: 100%;
+    }
+
+    #bullets {
+        font-size: 0.7em;
+    }
+
+    input {
+        font-size: 1.9em;
+    }
+
+    .button {
+        font-size: 2.5em;
+        margin-top: 3%;
+        margin-bottom: 3%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .lyrics {
+        grid-template-areas: "title"
+                             "image"
+                             "lyrics"
+    ;
+    grid-template-columns: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    }
+
+    .lyrics h3 {
+        font-size: 2em;
+        width: 90%;
+    }
+
+    .lyrics p {
+        width: 90%;
+    }
+	/* // rules here apply to devices from 769px to 992px (inclusive) */
+	
+}
+@media (max-width: 811px) {
+	
+    #top {
+        width: 100%;
+    }
+	/* // rules here apply to devices from 0px to 768px (inclusive) */
+	
+}
+
