@@ -14,7 +14,7 @@ var create_lyrics = (artist, song)=>{
         redirect: 'follow'
     };
     // make API call with parameters and use promises to get response
-    fetch("https://0lqd5jlcmc.execute-api.us-east-1.amazonaws.com/dev", requestOptions)
+    fetch("https://eaqmh9pnlb.execute-api.us-east-1.amazonaws.com/dev", requestOptions)
     .then(response => response.text())
     .then(result => {
         if (JSON.parse(result).statusCode == 200){
