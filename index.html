@@ -7,25 +7,24 @@
         <script src="scripts.js"></script>
     </head>
     <body>
-        <div id="top">
-            <div id="head">
-                <h1 id=>Versify</h1>
-                <!-- <h2 id=>Generate new verses of your favorite songs with AI</h2> -->
+        <div id="page-container">
+            <div id="content-wrap">
+                <div id="head">
+                    <h1 id=>Versify</h1>
+                </div>
+                <div id="form">
+                    <input id="song" type="text" placeholder="Song Name">
+                    <input id="artist" type="text" placeholder="Artist Name">
+                    <button class="button" onclick="create_lyrics(document.getElementById('artist').value, document.getElementById('song').value)">
+                        <span class="button__text">Generate</span>
+                    </button>
+                </div>
+                </div>
+                    <div id="new_lyrics">
+                </div>
             </div>
-            <ul id="bullets">
-                <li>Versify uses GTP-3 and the Genius API to write  verses that match the style of a song.</li>
-                <li>The results will always be different each time the program runs!</li>
-                <li>Created by <a href="https://owenmccadden.github.io/" target="_blank">Owen McCadden</a>. Made using <a href="https://docs.genius.com/" target="_blank">Genius</a> and <a href="https://openai.com/" target="_blank">OpenAI</a>.</li>
-            </ul>
-            <div id="form">
-                <input id="artist" type="text" placeholder="Artist Name">
-                <input id="song" type="text" placeholder="Song Name">
-                <button class="button" onclick="create_lyrics(document.getElementById('artist').value, document.getElementById('song').value)">
-                    <span class="button__text">Generate</span>
-                </button>
-            </div>
-        </div>
-        <div id="new_lyrics">
-        </div>
+            <footer id="footer">
+                <p>Created by <a href="https://owenmccadden.github.io/" target="_blank">Owen McCadden</a>. Made using <a href="https://docs.genius.com/" target="_blank">Genius</a> and <a href="https://openai.com/" target="_blank">OpenAI</a>.</p>
+            </footer>
     </body>
 </html>
