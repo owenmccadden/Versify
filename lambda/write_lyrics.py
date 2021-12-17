@@ -6,14 +6,16 @@ import os
 import openai
 import boto3
 
-openai.api_key = "" #enter your openai api key here
+openai.api_key = "" # enter your openai api key here
 genius_key = "" # enter your genius api key here
-song_url = ""
+song_url = "" # leave blank, used to generate song lyrics url
 
 def get_lyrics(song_url):
     page = requests.get(song_url)
     soup = BeautifulSoup(page.text, 'html.parser')
-    lyrics = soup.find_all('div', {'class': 'Lyrics__Container-sc-1ynbvzw-7'})
+    lyrics = soup.find_all('div', {'class': 'Lyrics__Container-sc-1ynbvzw-10'})
+    if len(lyrics) == 0:
+        lyrics = soup.find_all('div', {'class': 'Lyrics__Container-sc-1ynbvzw-6'})
     raw_lyrics = ''
     for div in lyrics:
         for br in div.find_all("br"):
@@ -29,7 +31,7 @@ def get_url(track_name, track_artist):
     headers = {'Authorization': 'Bearer ' + genius_key}
     search_url = base_url + '/search'
     data = {'q': track_name + ' ' + track_artist}
-    response = requests.get(search_url, data=data, headers=headers)
+    response = requests.get(search_url, params=data, headers=headers)
     json = response.json()
     remote_song_info = None
     for hit in json['response']['hits']:
@@ -88,4 +90,6 @@ def lambda_handler(event, context):
                 'statusCode': 400,
                 'body': json.dumps('Error writing the lyrics. {}'.format(e))
         }
+
+    
     
